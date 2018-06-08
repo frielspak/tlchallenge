@@ -1,7 +1,7 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
-    "keywords": ["framework", "laravel", "lumen"],
+    "name": "r1do/tlchallenge",
+    "description": "Challenge for TL",
+    "keywords": ["challenge", "lumen"],
     "license": "MIT",
     "type": "project",
     "require": {
