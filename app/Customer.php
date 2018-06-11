@@ -22,6 +22,4 @@ class Customer extends Model
      * Fillable fields on create method
      */
     protected $fillable = ['id', 'name', 'since', 'revenue'];
-
-
 }

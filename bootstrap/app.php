@@ -50,6 +50,29 @@ $app->singleton(
 
 /*
 |--------------------------------------------------------------------------
+| Register Customs Config Files
+|--------------------------------------------------------------------------
+|
+| Here you can load customs configuration files.
+|
+*/
+
+$app->configure('api');
+
+/*
+|--------------------------------------------------------------------------
+| Register Service Providers
+|--------------------------------------------------------------------------
+|
+| Here we will register all of the application's service providers which
+| are used to bind services into the container.
+|
+*/
+
+$app->register(App\Providers\DiscountsServiceProvider::class);
+
+/*
+|--------------------------------------------------------------------------
 | Load The Application Routes
 |--------------------------------------------------------------------------
 |

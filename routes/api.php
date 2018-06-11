@@ -11,6 +11,14 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    //return $router->app->version();
-});
+$router->get('/', 'AppController@index');
+
+/*
+ * How to check available discounts on an order.
+ */
+$router->get('/discounts', 'DiscountsController@validateDiscountRulesInformation');
+
+/*
+ * Route to get the eligible discounts for an order.
+ */
+$router->post('/discounts', 'DiscountsController@validateDiscountRules');
