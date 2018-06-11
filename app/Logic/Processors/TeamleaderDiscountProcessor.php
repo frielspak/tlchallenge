@@ -40,7 +40,12 @@ class TeamleaderDiscountProcessor implements DiscountProcessorInterface
 
         foreach ($this->enabledDiscountsRules as $discountRule){
             $discountRule = new $discountRule($dataProcessor);
-            $result[] = $discountRule->validateRule($order);
+            $validRule = $discountRule->validateRule($order);
+
+            if($validRule)
+            {
+                $result[] = $validRule;
+            }
         }
 
         return $result;
