@@ -1,21 +1,38 @@
-# Lumen PHP Framework
+# TL Challenge
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+TL Challenge was made on top of Laravel Lumen.
+I could have made it using Slim too.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Instalation
 
-## Official Documentation
+Download the source code and run 
+* composer install
 
-Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
+If you don't get the database.sqlite you just need to create the file database.sqlite inside database folder
+and then run
 
-## Security Vulnerabilities
+* php artisan migrate:refresh --seed
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+## How i did it
 
-## License
+Since the idea was to create a micro service to retrieve the eligible discounts for a given order i decided to use Lumen Framework by Laravel, instead of just Symfony components to speed up the process.
 
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+The same thing would be easily achived with another Framework like, Slim 3 or API Framework.
+
+The core thing here was to make it the must maintainable i could. 
+So i used the service container to bind the Data Provider and the Discount Processor on the app.
+So it could be easily changed for another logic on the future, in order to do that it just had to implement DiscountProcessorInterface and DataProviderInterface.
+
+I created an Order object to abstract the way the request come to us (by json, form, wtv), the important thing is to process the data and create an Order object.
+
+To easily add new discount rules you just need to implement the interface DiscountRuleInterface and register that new class on the config file, 
+you can find it on config/api.php.
+
+To disable a Discount Rule you just need to remove it from the config file.
+
+## Improvements
+
+To improve the app, the result from the Discount Rules, must be more informative.
+
+In the Discount Rules an improvement for best performance would be to change the way the product query are being done.
+Instead of one query for each product, one query to retrieve all the products need, would be much better.
