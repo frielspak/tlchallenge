@@ -2,18 +2,20 @@
 
 namespace App\Logic\Interfaces;
 
-use Illuminate\Http\Request;
+use App\Order;
 
+/**
+ * @author  Ricardo Malveiro <r1do@csrcon.info>
+ */
 interface DiscountRuleInterface
 {
     /**
-     * @param Request $order the order to be validated
-     *
      * Validate if the order is eligible for this discount rule.
      *
      * Return an array containing all the information about the discount or FALSE if the rule is not applicable.
      *
+     * @param Order $order the order to be validated
      * @return array
      */
-    public function validateRule(Request $order);
+    public function validateRule(Order $order);
 }

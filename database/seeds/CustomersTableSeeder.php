@@ -4,6 +4,9 @@ use Illuminate\Database\Seeder;
 use App\Customer;
 use Carbon\Carbon;
 
+/**
+ * @author  Ricardo Malveiro <r1do@csrcon.info>
+ */
 class CustomersTableSeeder extends Seeder
 {
     /**

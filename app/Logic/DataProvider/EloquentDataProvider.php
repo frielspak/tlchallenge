@@ -5,14 +5,16 @@ namespace App\Logic\DataProvider;
 use App\Logic\Interfaces\Customer;
 use App\Logic\Interfaces\DataProviderInterface;
 
-class TeamleaderDataProvider implements DataProviderInterface
+/**
+ * @author  Ricardo Malveiro <r1do@csrcon.info>
+ */
+class EloquentDataProvider implements DataProviderInterface
 {
 
     /**
-     * @param $id Customer Id
-     *
      * Get customer by id.
      *
+     * @param $id Customer Id
      * @return mixed Customer object
      */
     public function getCustomerById($id)
@@ -21,10 +23,9 @@ class TeamleaderDataProvider implements DataProviderInterface
     }
 
     /**
-     * @param $name Customer Name
-     *
      * Get customer by name.
      *
+     * @param $name Customer Name
      * @return mixed Customer object
      */
     public function getCustomerByName($name)

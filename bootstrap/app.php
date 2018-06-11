@@ -70,6 +70,7 @@ $app->configure('api');
 */
 
 $app->register(App\Providers\DiscountsServiceProvider::class);
+$app->register(App\Providers\DataProviderServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------

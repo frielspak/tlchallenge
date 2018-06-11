@@ -4,6 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @author  Ricardo Malveiro <r1do@csrcon.info>
+ */
 class Customer extends Model
 {
     /**

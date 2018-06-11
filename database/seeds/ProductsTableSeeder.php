@@ -3,6 +3,9 @@
 use Illuminate\Database\Seeder;
 use App\Product;
 
+/**
+ * @author  Ricardo Malveiro <r1do@csrcon.info>
+ */
 class ProductsTableSeeder extends Seeder
 {
     /**

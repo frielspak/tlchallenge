@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+/**
+ * @author  Ricardo Malveiro <r1do@csrcon.info>
+ */
 class AppController extends Controller
 {
     /**
