@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 
 /**
@@ -32,7 +31,7 @@ class Order
 
     public function __construct()
     {
-        $items = new Collection();
+        $this->items = new Collection();
     }
 
     /**
@@ -86,9 +85,9 @@ class Order
     /**
      * @return array
      */
-    public function getProducts()
+    public function getItems()
     {
-        return $this->products;
+        return $this->items;
     }
 
     /**
@@ -100,26 +99,31 @@ class Order
     }
 
     /**
-     * Convert a Order Request to Order Object.
+     * Convert a Order array to Order Object.
      *
-     * @param Request $request
+     * @param array $order
      * @return void
      */
-    public function fromRequest(Request $request)
+    public function fromArray($order)
     {
-        if(isset($request->id))
-            $this->setId($request->id);
+        if(isset($order['id']))
+            $this->setId(intval($order['id']));
 
-        if(isset($request->{'customer-id'}))
-            $this->customerId = $request->{'customer-id'};
+        if(isset($order['customer-id']))
+            $this->setCustomerId(intval($order['customer-id']));
 
-        if(isset($request->items))
+        if(isset($order['items']))
         {
-            foreach ($request->items as $item)
+            foreach ($order['items'] as $item)
             {
+                $objItem = new Item();
+                $objItem->fromArray($item);
 
+                $this->items->push($objItem);
             }
         }
 
+        if(isset($order['total']))
+            $this->setTotal(doubleval($order['items']));
     }
 }

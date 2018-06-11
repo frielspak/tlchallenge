@@ -43,7 +43,7 @@ class DiscountsController extends Controller
         }
 
         $order = new Order();
-        $order->fromRequest($orderRequest);
+        $order->fromArray($orderRequest->all());
 
         return $discountProcessor->processDiscounts($order, $dataProvider);
     }

@@ -30,7 +30,7 @@ class TeamleaderDiscountProcessor implements DiscountProcessorInterface
      * Return an array containing all the discounts that can be applied to that order
      * or an empty array if none can be applied.
      *
-     * @param Request $order the order to be processed
+     * @param Order $order the order to be processed
      * @param DataProviderInterface $dataProcessor provider
      * @return array
      */

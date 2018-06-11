@@ -1,7 +1,6 @@
 <?php
 
 namespace App;
-use Illuminate\Http\Request;
 
 /**
  * @author  Ricardo Malveiro <r1do@csrcon.info>
@@ -40,15 +39,15 @@ class Item
     /**
      * @param int $quantity
      */
-    public function setCustomerId($quantity)
+    public function setQuantity($quantity)
     {
         $this->quantity = $quantity;
     }
 
     /**
-     * @param array $unitPrice
+     * @param double $unitPrice
      */
-    public function setProducts($unitPrice)
+    public function setUnitPrice($unitPrice)
     {
         $this->unitPrice = $unitPrice;
     }
@@ -94,26 +93,23 @@ class Item
     }
 
     /**
-     * Convert  to Item Object.
+     * Convert array to Item Object.
      *
-     * @param Request $request
+     * @param array $item
      * @return void
      */
-    public function fromStdClass(StdClass $request)
+    public function fromArray($item)
     {
-        if(isset($request->id))
-            $this->setId($request->id);
+        if(isset($item['product-id']))
+            $this->setProductId($item['product-id']);
 
-        if(isset($request->{'customer-id'}))
-            $this->customerId = $request->{'customer-id'};
+        if(isset($item['quantity']))
+            $this->setQuantity(intval($item['quantity']));
 
-        if(isset($request->items))
-        {
-            foreach ($request->items as $item)
-            {
+        if(isset($item['unit-price']))
+            $this->setUnitPrice(doubleval($item['unit-price']));
 
-            }
-        }
-
+        if(isset($item['total']))
+            $this->setTotal(doubleval($item['total']));
     }
 }
