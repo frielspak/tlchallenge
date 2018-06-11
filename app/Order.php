@@ -124,6 +124,6 @@ class Order
         }
 
         if(isset($order['total']))
-            $this->setTotal(doubleval($order['items']));
+            $this->setTotal(doubleval($order['total']));
     }
 }

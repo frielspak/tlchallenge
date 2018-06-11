@@ -9,7 +9,7 @@ use App\Order;
 /**
  * @author  Ricardo Malveiro <r1do@csrcon.info>
  */
-class AditionalForFree implements DiscountRuleInterface {
+class AdditionalForFree implements DiscountRuleInterface {
 
     const DESCRIPTION = 'Customer bought 5 or more items of the same product from category Switches, making him eligible for a sixth for free';
     const DISCOUNT = 'Sixth for free';

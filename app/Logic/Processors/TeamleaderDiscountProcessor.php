@@ -43,9 +43,7 @@ class TeamleaderDiscountProcessor implements DiscountProcessorInterface
             $validRule = $discountRule->validateRule($order);
 
             if($validRule)
-            {
                 $result[] = $validRule;
-            }
         }
 
         return $result;
