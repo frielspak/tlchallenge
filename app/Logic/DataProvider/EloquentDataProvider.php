@@ -2,9 +2,9 @@
 
 namespace App\Logic\DataProvider;
 
-use App\Customer;
+use App\Models\Customer;
 use App\Logic\Interfaces\DataProviderInterface;
-use App\Product;
+use App\Models\Product;
 
 /**
  * @author  Ricardo Malveiro <r1do@csrcon.info>

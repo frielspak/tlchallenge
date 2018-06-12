@@ -2,7 +2,7 @@
 
 use App\Logic\DiscountRules\AdditionalForFree;
 use App\Logic\Interfaces\DataProviderInterface;
-use App\Order;
+use App\Models\Order;
 
 /**
  * @author  Ricardo Malveiro <r1do@csrcon.info>

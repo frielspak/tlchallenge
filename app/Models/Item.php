@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 /**
  * @author  Ricardo Malveiro <r1do@csrcon.info>

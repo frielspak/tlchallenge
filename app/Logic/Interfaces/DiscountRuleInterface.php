@@ -2,7 +2,7 @@
 
 namespace App\Logic\Interfaces;
 
-use App\Order;
+use App\Models\Order;
 
 /**
  * @author  Ricardo Malveiro <r1do@csrcon.info>

@@ -1,6 +1,6 @@
 <?php
 
-use App\Item;
+use App\Models\Item;
 
 /**
  * @author  Ricardo Malveiro <r1do@csrcon.info>

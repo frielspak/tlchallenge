@@ -1,6 +1,7 @@
 <?php
 
-use App\Order;
+use App\Models\Order;
+use \Illuminate\Support\Collection;
 
 /**
  * @author  Ricardo Malveiro <r1do@csrcon.info>
@@ -14,7 +15,7 @@ class OrderTest extends TestCase
     public function testOrderItemsInitialization()
     {
         $order = new Order();
-        $this->assertInstanceOf(\Illuminate\Support\Collection::class, $order->getItems());
+        $this->assertInstanceOf(Collection::class, $order->getItems());
         $this->assertEquals(0, $order->getItems()->count());
     }
 
@@ -33,9 +34,7 @@ class OrderTest extends TestCase
         $this->assertEquals(1, $order->getId());
         $this->assertEquals(2, $order->getCustomerId());
         $this->assertEquals(1, $order->getItems()->count());
-        $this->assertInstanceOf(\App\Item::class, $order->getItems()->first());
+        $this->assertInstanceOf(\App\Models\Item::class, $order->getItems()->first());
         $this->assertEquals(49.90, $order->getTotal());
     }
-
-
 }

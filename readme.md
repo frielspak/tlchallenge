@@ -5,8 +5,10 @@ I could have made it using Slim too.
 
 ## Instalation
 
-Download the source code and run 
+Download the source code and run (inside project folder)
+
 * composer install
+* php -S localhost:8080 -t ./public
 
 If you don't get the database.sqlite you just need to create the file database.sqlite inside database folder
 and then run

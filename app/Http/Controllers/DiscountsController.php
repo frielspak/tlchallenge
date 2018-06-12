@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Validator;
 use App\Logic\Interfaces\DataProviderInterface;
 use App\Logic\Interfaces\DiscountProcessorInterface;
 use Illuminate\Http\Request;
-use App\Order;
+use App\Models\Order;
 
 /**
  * @author  Ricardo Malveiro <r1do@csrcon.info>

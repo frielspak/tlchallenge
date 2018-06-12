@@ -2,10 +2,9 @@
 
 namespace App\Logic\Processors;
 
-
 use App\Logic\Interfaces\DataProviderInterface;
 use App\Logic\Interfaces\DiscountProcessorInterface;
-use App\Order;
+use App\Models\Order;
 
 /**
  * @author  Ricardo Malveiro <r1do@csrcon.info>
