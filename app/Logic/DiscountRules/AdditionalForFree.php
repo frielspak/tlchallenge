@@ -11,7 +11,7 @@ use App\Models\Order;
  */
 class AdditionalForFree implements DiscountRuleInterface {
 
-    const DESCRIPTION = 'Customer bought 5 or more items of the same product from category Switches, making him eligible for a sixth for free';
+    const DESCRIPTION = 'For every 5 items of the same product from category Switches, customers will get a sixth for free';
     const DISCOUNT = 'Sixth for free';
 
     const SWITCHES_CATEGORY_ID = 2;
